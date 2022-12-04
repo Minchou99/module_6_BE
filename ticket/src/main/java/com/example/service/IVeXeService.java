@@ -16,4 +16,6 @@ public interface IVeXeService {
 
     VeXe findByIdOptional(int id);
 
+    List<VeXe> search(String diemDi, String diemDen, String ngayBatDau, String ngayKetThuc);
+
 }

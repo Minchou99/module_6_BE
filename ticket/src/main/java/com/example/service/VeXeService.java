@@ -37,4 +37,9 @@ public class VeXeService implements IVeXeService {
     public VeXe findByIdOptional(int id) {
         return veXeRepository.findById(id);
     }
+
+    @Override
+    public List<VeXe> search(String diemDi, String diemDen, String ngayBatDau, String ngayKetThuc) {
+        return veXeRepository.search(diemDi,diemDen,ngayBatDau,ngayKetThuc);
+    }
 }

@@ -28,6 +28,16 @@ public class VeXeRestController {
         return new ResponseEntity<>(veXeList, HttpStatus.OK);
     }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<VeXe>> search(
+            @RequestParam String diemDi,
+            @RequestParam String diemDen,
+            @RequestParam String ngayBatDau,
+            @RequestParam String ngayKetThuc) {
+        List<VeXe> veXeList = veXeService.search(diemDi, diemDen, ngayBatDau, ngayKetThuc);
+        return new ResponseEntity<>(veXeList, HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity saveVeXe(@RequestBody VeXeDto veXeDto) {
         VeXe veXe = new VeXe();
@@ -85,4 +95,5 @@ public class VeXeRestController {
         }
         return new ResponseEntity<>(veXeOptional.get(), HttpStatus.OK);
     }
+
 }
